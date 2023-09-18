@@ -1,4 +1,5 @@
 //This file is used to display and handle user interface
+import 'package:expense_tracker_app/expense_list.dart';
 import 'package:expense_tracker_app/model/expense.dart';
 import 'package:flutter/material.dart';
 
@@ -24,11 +25,11 @@ class _ExpensesState extends State<Expenses> {
           date: DateTime.now(),
           category: Category.leisure),
     ];
-    return const Scaffold(
+    return Scaffold(
       body: Column(
         children: [
-          Text('Expenses chart list'),
-          Text('Expenses..'),
+          const Text('Expenses chart list'),
+          Expanded(child: ExpenseList(expenses: _registeredExpenses)),
         ],
       ),
     );
