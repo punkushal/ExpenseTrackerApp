@@ -1,5 +1,5 @@
 //This file is used to display and handle user interface
-import 'package:expense_tracker_app/expense_list.dart';
+import 'package:expense_tracker_app/widget/expense_list/expense_list.dart';
 import 'package:expense_tracker_app/model/expense.dart';
 import 'package:flutter/material.dart';
 
