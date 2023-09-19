@@ -11,7 +11,7 @@ const uuid = Uuid();
 enum Category { food, travel, leisure, work }
 
 //DateFormat() provided by intl package
-final formatter = DateFormat();
+final formatter = DateFormat.yMd();
 const categoryIcons = {
   //This is a map value
   Category.food: Icons.dinner_dining,
