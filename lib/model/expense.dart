@@ -1,5 +1,7 @@
 //This is a blue print for my expense data
 
+import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:uuid/uuid.dart';
 
 //This is a utility class object to generate unique ids
@@ -7,6 +9,16 @@ const uuid = Uuid();
 
 //This Category is custom type
 enum Category { food, travel, leisure, work }
+
+//DateFormat() provided by intl package
+final formatter = DateFormat();
+const categoryIcons = {
+  //This is a map value
+  Category.food: Icons.dinner_dining,
+  Category.travel: Icons.flight_takeoff,
+  Category.leisure: Icons.movie,
+  Category.work: Icons.work,
+};
 
 class Expense {
   final String title;
@@ -22,4 +34,8 @@ class Expense {
       required this.date,
       required this.category})
       : id = uuid.v4(); //This V4() will generate unique string id
+  //get is a getter which don't need any parenthesis
+  String get formattedDate {
+    return formatter.format(date);
+  }
 }
