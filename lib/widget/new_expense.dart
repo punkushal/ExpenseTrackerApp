@@ -42,7 +42,11 @@ class _NewExpenseState extends State<NewExpense> {
           Row(
             children: [
               TextButton(
-                onPressed: () {},
+                onPressed: () {
+                  //Which then remove the overlay of modal sheet when we click
+                  //cancel button, context is passed by build(BuildContext context)
+                  Navigator.pop(context);
+                },
                 child: const Text('Cancel'),
               ),
               ElevatedButton(
