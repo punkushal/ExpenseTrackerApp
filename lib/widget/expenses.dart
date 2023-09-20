@@ -1,6 +1,7 @@
 //This file is used to display and handle user interface
 import 'package:expense_tracker_app/widget/expense_list/expense_list.dart';
 import 'package:expense_tracker_app/model/expense.dart';
+import 'package:expense_tracker_app/widget/new_expense.dart';
 import 'package:flutter/material.dart';
 
 class Expenses extends StatefulWidget {
@@ -26,7 +27,7 @@ class _ExpensesState extends State<Expenses> {
   void _openAddExpensOverlay() {
     showModalBottomSheet(
       context: context,
-      builder: (ctx) => const Text('Model Overlay Sheet'),
+      builder: (ctx) => const NewExpense(),
     );
   }
 
