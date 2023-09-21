@@ -31,6 +31,21 @@ class _NewExpenseState extends State<NewExpense> {
     });
   }
 
+  /*To valid that all the required field is entered by user on not
+    We are creating function which then passed to ElevatedButto so
+    that when user press that button, this function will get executes and 
+    perform certain task to validate
+   */
+  void _submitExpenseData() {
+    final enteredAmount = double.tryParse(_amountController.text);
+    final amountIsInvalid = enteredAmount == null || enteredAmount <= 0;
+    if (_titleController.text.isEmpty ||
+        amountIsInvalid ||
+        _selectedDate == null) {
+      //show error
+    }
+  }
+
   @override
   //always use whenever you use TextEditingController()
   void dispose() {
@@ -122,9 +137,7 @@ class _NewExpenseState extends State<NewExpense> {
                 child: const Text('Cancel'),
               ),
               ElevatedButton(
-                onPressed: () {
-                  print(_titleController.text);
-                },
+                onPressed: _submitExpenseData,
                 child: const Text('Save Expense'),
               ),
             ],
