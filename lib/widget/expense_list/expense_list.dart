@@ -4,15 +4,21 @@ import 'package:flutter/material.dart';
 
 //This contain my expense list which scrollable
 class ExpenseList extends StatelessWidget {
-  const ExpenseList({super.key, required this.expenses});
+  const ExpenseList(
+      {super.key, required this.expenses, required this.onRemoveExpense});
   //We here building Expense list so for this
   //we've to pass list of Expense from the file where it comes
   final List<Expense> expenses;
+  final void Function(Expense expense) onRemoveExpense;
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
       itemCount: expenses.length,
-      itemBuilder: (ctx, index) => ExpenseItem(expenses[index]),
+      itemBuilder: (ctx, index) => Dismissible(
+        key: ValueKey(expenses[index]),
+        onDismissed: (direction) => onRemoveExpense(expenses[index]),
+        child: ExpenseItem(expenses[index]),
+      ),
     );
   }
 }
