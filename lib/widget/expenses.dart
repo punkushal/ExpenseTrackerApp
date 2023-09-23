@@ -27,6 +27,8 @@ class _ExpensesState extends State<Expenses> {
   ];
   void _openAddExpensOverlay() {
     showModalBottomSheet(
+      useSafeArea:
+          true, //this ensures that our modal is not interupted by any mobile features like camera
       isScrollControlled: true, //so contents are not overlapped to each other
       context: context,
       builder: (ctx) => NewExpense(onAddExpense: _addNewExpense),

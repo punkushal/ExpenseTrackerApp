@@ -81,10 +81,10 @@ class _NewExpenseState extends State<NewExpense> {
     //This makes whenever we are in landscape mode we can also see other fill up field to see
     final keyBoardSpace = MediaQuery.of(context).viewInsets.bottom;
     return SizedBox(
-      width: double.infinity,
+      height: double.infinity,
       child: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.fromLTRB(16, 48, 16, keyBoardSpace + 16),
+          padding: EdgeInsets.fromLTRB(16, 16, 16, keyBoardSpace + 16),
           child: Column(
             children: [
               TextField(
