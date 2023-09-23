@@ -1,4 +1,5 @@
 //This file is used to display and handle user interface
+import 'package:expense_tracker_app/widget/chart/chart.dart';
 import 'package:expense_tracker_app/widget/expense_list/expense_list.dart';
 import 'package:expense_tracker_app/model/expense.dart';
 import 'package:expense_tracker_app/widget/new_expense.dart';
@@ -63,6 +64,9 @@ class _ExpensesState extends State<Expenses> {
 
   @override
   Widget build(BuildContext context) {
+    //This width is used to display our app in both potrait as well as landscape mode
+    //So that availabe space is maintained properly and display correctly
+    final width = MediaQuery.of(context).size.width;
     Widget mainContent = const Center(
       child: Text('No expenses found. Start adding some!'),
     );
@@ -82,14 +86,29 @@ class _ExpensesState extends State<Expenses> {
           ),
         ],
       ),
-      body: Column(
-        children: [
-          const Text('Expenses chart list'),
-          Expanded(
-            child: mainContent,
-          ),
-        ],
-      ),
+      body: width < 600 //if width less than 600 column() works otherwise Row()
+          ? Column(
+              children: [
+                Chart(expenses: _registeredExpenses),
+                Expanded(
+                  child: mainContent,
+                ),
+              ],
+            )
+          : Row(
+              children: [
+                //Here we use Expanded to Chart() bcuz without of it cannot display
+                //on the screen because inside of Chart we set Container() width as
+                //double.infinity so it takes as more width as possible
+                //Row() by default has this property so that's why we use Expanded Widget
+                Expanded(
+                  child: Chart(expenses: _registeredExpenses),
+                ),
+                Expanded(
+                  child: mainContent,
+                ),
+              ],
+            ),
     );
   }
 }
