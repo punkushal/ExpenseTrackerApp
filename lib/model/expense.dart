@@ -39,3 +39,19 @@ class Expense {
     return formatter.format(date);
   }
 }
+
+class ExpenseBucket {
+  final Category category;
+  final List<Expense> expenses;
+  ExpenseBucket({required this.category, required this.expenses});
+
+  double get totalExpense {
+    double sum = 0;
+    //for every iteration expense get one expense from expenses
+    //which then can be used to add expense amount to sum variable
+    for (final expense in expenses) {
+      sum += expense.amount;
+    }
+    return sum;
+  }
+}
