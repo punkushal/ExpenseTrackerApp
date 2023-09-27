@@ -9,8 +9,8 @@
 This is a Flutter-based Expense Tracker app that helps you manage and keep track of your expenses effortlessly. It provides a user-friendly interface for recording and visualizing your expenses, making it easier for you to manage your finances.
 
 ## Features
-Expense Tracking : Easily add, edit, and delete expenses.
-Category Management: Categorize your expenses for better organization.
-Bar Chart Visualization: View your expenses in a bar chart to identify the highest-cost categories.
-Undo Feature : Accidentally deleted an expense? No worries! You can undo your actions within 3 seconds.
-Intuitive User Interface : A clean and user-friendly design for a seamless experience.
+1. Expense Tracking : Easily add, edit, and delete expenses.
+2. Category Management: Categorize your expenses for better organization.
+3. Bar Chart Visualization: View your expenses in a bar chart to identify the highest-cost categories.
+4. Undo Feature : Accidentally deleted an expense? No worries! You can undo your actions within 3 seconds.
+5. Intuitive User Interface : A clean and user-friendly design for a seamless experience.
